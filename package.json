@@ -1,9 +1,9 @@
 {
-  "name": "@crust-network/type-definitions",
+  "name": "@crustio/type-definitions",
   "version": "0.0.1",
   "description": "Polkadot.js type definations for Crust Network",
   "main": "index.js",
-  "license": "Apache-2.0",
+  "license": "GPL-3.0",
   "dependencies": {
     "@open-web3/orml-type-definitions": "^0.8.2-9"
   }

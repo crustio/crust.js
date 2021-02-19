@@ -29,7 +29,7 @@ export default {
         },
         MerchantLedger: {
             reward: 'Balance',
-            pledge: 'Balance'
+            collateral: 'Balance'
         }
     }
 };
