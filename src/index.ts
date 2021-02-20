@@ -1,12 +1,11 @@
-import { rpc as ormlRpc, types as ormlTypes, typesAlias as ormlAlias } from '@open-web3/orml-type-definitions';
-import { jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs } from '@open-web3/orml-type-definitions/utils';
+import {jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs} from '@open-web3/orml-type-definitions/utils';
 import stakingPool from './staking';
 import claims from './claims';
 import market from './market';
 import swork from './swork';
 import versioned from './types-known/versioned';
 
-const crustDefs = {
+export const crustTypes = {
     stakingPool,
     claims,
     market,
@@ -14,20 +13,19 @@ const crustDefs = {
 }
 
 export const types = {
-    ...ormlTypes,
-    ...typesFromDefs(crustDefs),
+    ...typesFromDefs(crustTypes),
 };
 
 export const typesBundle = {
     spec: {
-      maxwell: {
+      crust: {
         types: versioned
       }
     }
 };
 
-export const rpc = jsonrpcFromDefs(crustDefs, { ...ormlRpc });
-export const typesAlias = typesAliasFromDefs(crustDefs, { ...ormlAlias });
+export const rpc = jsonrpcFromDefs(crustTypes);
+export const typesAlias = typesAliasFromDefs(crustTypes);
 
 const bundle = {
     rpc,
@@ -47,6 +45,6 @@ const bundle = {
 // Type overrides have priority issues
 export const typesBundleForPolkadot = {
     spec: {
-      maxwell: bundle
+      crust: bundle
     }
 };

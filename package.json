@@ -1,6 +1,6 @@
 {
   "name": "@crustio/type-definitions",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Polkadot.js type definations for Crust Network",
   "main": "index.js",
   "license": "GPL-3.0",
