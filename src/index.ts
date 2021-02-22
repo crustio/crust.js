@@ -1,12 +1,12 @@
 import {jsonrpcFromDefs, typesAliasFromDefs, typesFromDefs} from '@open-web3/orml-type-definitions/utils';
-import stakingPool from './staking';
+import staking from './staking';
 import claims from './claims';
 import market from './market';
 import swork from './swork';
 import versioned from './types-known/versioned';
 
 export const crustTypes = {
-    stakingPool,
+    staking,
     claims,
     market,
     swork
