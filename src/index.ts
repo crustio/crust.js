@@ -3,9 +3,10 @@ import staking from './staking';
 import claims from './claims';
 import market from './market';
 import swork from './swork';
-import versioned from './types-known/versioned';
+import base from './base';
 
 export const crustTypes = {
+    base,
     staking,
     claims,
     market,
@@ -16,28 +17,19 @@ export const types = {
     ...typesFromDefs(crustTypes),
 };
 
-export const typesBundle = {
-    spec: {
-      crust: {
-        types: versioned
-      }
-    }
-};
-
 export const rpc = jsonrpcFromDefs(crustTypes);
 export const typesAlias = typesAliasFromDefs(crustTypes);
 
 const bundle = {
     rpc,
-    types: [...versioned].map((version) => {
-      return {
-        minmax: version.minmax,
+    types: [
+      {
+        minmax: [undefined, undefined] as any,
         types: {
-          ...types,
-          ...version.types
+          ...types
         }
-      };
-    }),
+      }
+    ],
     alias: typesAlias
   };
   

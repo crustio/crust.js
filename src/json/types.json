@@ -1,4 +1,7 @@
 {
+    "Address": "AccountId",
+    "AddressInfo": "Vec<u8>",
+    "LookupSource": "AccountId",
     "Guarantee": {
         "targets": "Vec<IndividualExposure<AccountId, Balance>>",
         "total": "Compact<Balance>",
@@ -68,8 +71,5 @@
         "reported_files_size": "u64",
         "reported_srd_root": "MerkleRoot",
         "reported_files_root": "MerkleRoot"
-    },
-    "Address": "AccountId",
-    "AddressInfo": "Vec<u8>",
-    "LookupSource": "AccountId"
+    }
 }
