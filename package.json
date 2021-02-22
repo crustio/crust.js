@@ -9,5 +9,8 @@
   },
   "dependencies": {
     "@open-web3/orml-type-definitions": "^0.8.2-9"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31"
   }
 }
