@@ -4,6 +4,9 @@
   "description": "Polkadot.js type definations for Crust Network",
   "main": "index.js",
   "license": "GPL-3.0",
+  "scripts": {
+    "build:types": "npx ts-node src/scripts/generate.ts"
+  },
   "dependencies": {
     "@open-web3/orml-type-definitions": "^0.8.2-9"
   }
