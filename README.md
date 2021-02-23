@@ -31,7 +31,7 @@ async function main() {
     // Use api
 }
 
-main()
+main();
 ```
 
 3. Interact with chain
