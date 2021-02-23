@@ -61,7 +61,7 @@ export type FileInfo = typeof crustTypes.market.types.FileInfo;
   - [MPoW Types](https://github.com/crustio/crust.js/blob/main/src/swork.ts): `Identity`, `WorkReport`, ...
   - [GPoS Types](https://github.com/crustio/crust.js/blob/main/src/staking.ts): `Guarantee`, ...
 
-- Contribution
+## Contribution
   
   Please send a PR(Pull Request) to contribute this repo and read the following rules:
 
