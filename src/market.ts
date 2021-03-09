@@ -4,7 +4,7 @@ export default {
     FileInfo: {
       file_size: 'u64',
       expired_on: 'BlockNumber',
-      claimed_at: 'BlockNumber',
+      calculated_at: 'BlockNumber',
       amount: 'Balance',
       prepaid: 'Balance',
       reported_replica_count: 'u32',
