@@ -60,6 +60,10 @@ export type FileInfo = typeof crustTypes.market.types.FileInfo;
   - [DSM Types](https://github.com/crustio/crust.js/blob/main/src/market.ts): `FileInfo`, `MerchantLedger`, `Replica`, ...
   - [MPoW Types](https://github.com/crustio/crust.js/blob/main/src/swork.ts): `Identity`, `WorkReport`, ...
   - [GPoS Types](https://github.com/crustio/crust.js/blob/main/src/staking.ts): `Guarantee`, ...
+  
+- Packages
+  - [type-definitions](./packages/type-definitions/): Polkadot.js type definations for Crust Network
+  - [crust-pin](./packages/crust-pin): Decentralized pin on Crust Network
 
 ## Contribution
   

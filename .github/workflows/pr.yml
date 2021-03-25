@@ -9,8 +9,25 @@ jobs:
     name: ${{ matrix.step }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: ${{ matrix.step }}
-      run: |
-        yarn
-        yarn ${{ matrix.step }}
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+      
+      - name: Type definitions ${{ matrix.step }}
+        run: |
+          cd packages/type-definitions
+          yarn
+          yarn ${{ matrix.step }}
+      
+      - name: Crust pin ${{ matrix.step }}
+        run: |
+          cd packages/crust-pin
+          yarn
+          yarn ${{ matrix.step }}
+
+      
