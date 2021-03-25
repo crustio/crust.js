@@ -9,8 +9,19 @@ jobs:
     name: ${{ matrix.step }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: ${{ matrix.step }}
-      run: |
-        yarn
-        yarn ${{ matrix.step }}
+      - name: Checkout
+      - uses: actions/checkout@v1
+      
+      - name: Type definitions ${{ matrix.step }}
+        run: |
+          cd pacakges/type-definitions
+          yarn
+          yarn ${{ matrix.step }}
+      
+      - name: Crust pin ${{ matrix.step }}
+        run: |
+          cd packages/crust-pin
+          yarn
+          yarn ${{ matrix.step }}
+
+      
