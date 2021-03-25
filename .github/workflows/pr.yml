@@ -20,7 +20,7 @@ jobs:
       
       - name: Type definitions ${{ matrix.step }}
         run: |
-          cd pacakges/type-definitions
+          cd packages/type-definitions
           yarn
           yarn ${{ matrix.step }}
       
