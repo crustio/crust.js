@@ -4,9 +4,14 @@
   "description": "Decentralized pin on Crust Network",
   "main": "src/index.js",
   "license": "Apache-2.0",
-  "keywords": ["crust", "ipfs", "decentralized storage"],
+  "keywords": [
+    "crust",
+    "ipfs",
+    "decentralized storage"
+  ],
   "scripts": {
-    "build:types": "npx ts-node src/scripts/generate.ts",
+    "build:types": "echo 'No types in Crust Pin'",
+    "build": "tsc",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
@@ -14,7 +19,7 @@
   },
   "dependencies": {
     "@crustio/type-definitions": "^0.0.5",
-    "@polkadot/api": "^3.11.1"
+    "@polkadot/api": "^4.2.1"
   },
   "devDependencies": {
     "@babel/runtime": "^7.13.2",
