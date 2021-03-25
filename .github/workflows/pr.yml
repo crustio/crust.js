@@ -9,15 +9,22 @@ jobs:
     name: ${{ matrix.step }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+      
       - name: Type definitions ${{ matrix.step }}
-      - uses: actions/checkout@v1
         run: |
           cd pacakges/type-definitions
           yarn
           yarn ${{ matrix.step }}
       
       - name: Crust pin ${{ matrix.step }}
-        uses: actions/checkout@v1
         run: |
           cd packages/crust-pin
           yarn
