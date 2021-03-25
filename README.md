@@ -1,4 +1,4 @@
-![license](https://img.shields.io/badge/License-GPL%203.0-blue?logo=gnu&style=flat-square)
+![license](https://img.shields.io/badge/License-Apache%202.0-blue?logo=apache&style=flat-square)
 [![npm](https://img.shields.io/npm/v/@crustio/type-definitions?logo=npm&style=flat-square)](https://www.npmjs.com/package/@crustio/type-definitions)
 
 # crust.js
