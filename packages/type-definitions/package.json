@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "Polkadot.js type definations for Crust Network",
   "main": "./src/index.js",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "scripts": {
     "build:types": "npx ts-node src/scripts/generate.ts",
     "lint": "gts lint",

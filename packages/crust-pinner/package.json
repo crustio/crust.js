@@ -1,0 +1,25 @@
+{
+  "name": "@crustio/crust-pin",
+  "version": "0.0.1",
+  "description": "Decentralized pin on Crust Network",
+  "main": "src/index.js",
+  "license": "Apache-2.0",
+  "keywords": ["crust", "ipfs", "decentralized storage"],
+  "scripts": {
+    "build:types": "npx ts-node src/scripts/generate.ts",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix"
+  },
+  "dependencies": {
+    "@crustio/type-definitions": "^0.0.5",
+    "@polkadot/api": "^3.11.1"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.13.2",
+    "@types/node": "^14.14.31",
+    "gts": "^3.1.0",
+    "typescript": "^4.0.3"
+  }
+}
