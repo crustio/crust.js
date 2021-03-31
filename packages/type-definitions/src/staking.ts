@@ -7,5 +7,8 @@ export default {
       submitted_in: 'EraIndex',
       suppressed: 'bool',
     },
+    ValidatorPrefs: {
+      guaranteefee: 'Compact<Perbill>'
+    }
   },
 };
