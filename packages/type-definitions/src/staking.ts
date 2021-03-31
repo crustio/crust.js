@@ -8,7 +8,7 @@ export default {
       suppressed: 'bool',
     },
     ValidatorPrefs: {
-      guaranteefee: 'Compact<Perbill>'
-    }
+      guaranteefee: 'Compact<Perbill>',
+    },
   },
 };
