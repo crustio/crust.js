@@ -5,6 +5,6 @@ export default {
     EthereumTxHash: 'H256',
     TokenType: {
       _enum: ['CRU18', 'CRU24', 'CRU24D6'],
-    }
+    },
   },
 };
