@@ -8,7 +8,7 @@ import claims from './claims';
 import market from './market';
 import swork from './swork';
 import base from './base';
-import csm from './csm';
+import csmLocking from './csmLocking';
 import benefit from './benefit';
 
 export const crustTypes = {
@@ -17,7 +17,7 @@ export const crustTypes = {
   claims,
   market,
   swork,
-  csm,
+  csmLocking,
   benefit,
 };
 
