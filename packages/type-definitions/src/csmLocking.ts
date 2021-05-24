@@ -3,7 +3,7 @@ export default {
   types: {
     CSMUnlockChunk: {
       value: 'Compact<Balance>',
-      bn: 'BlockNumber',
+      bn: 'Compact<BlockNumber>',
     },
     CSMLedger: {
       total: 'Compact<Balance>',
