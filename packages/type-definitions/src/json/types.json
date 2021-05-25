@@ -1,4 +1,5 @@
 {
+    "AccountInfo": "AccountInfoWithProviders",
     "Address": "AccountId",
     "AddressInfo": "Vec<u8>",
     "LookupSource": "AccountId",
