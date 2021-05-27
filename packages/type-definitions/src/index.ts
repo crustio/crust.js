@@ -1,24 +1,24 @@
+import base from './base';
+import benefit from './benefit';
+import csmLocking from './csmLocking';
+import claims from './claims';
 import {
   jsonrpcFromDefs,
   typesAliasFromDefs,
   typesFromDefs,
 } from '@open-web3/orml-type-definitions/utils';
-import staking from './staking';
-import claims from './claims';
 import market from './market';
+import staking from './staking';
 import swork from './swork';
-import base from './base';
-import csmLocking from './csmLocking';
-import benefit from './benefit';
 
 export const crustTypes = {
   base,
-  staking,
-  claims,
-  market,
-  swork,
-  csmLocking,
   benefit,
+  claims,
+  csmLocking,
+  market,
+  staking,
+  swork,
 };
 
 export const types = {
