@@ -10,13 +10,12 @@ export default {
       reported_replica_count: 'u32',
       replicas: 'Vec<Replica<AccountId>>',
     },
-    UsedInfo: {
-      used_size: 'u64',
-      reported_group_count: 'u32',
-      groups: 'BTreeMap<SworkerAnchor, bool>',
+    MerchantLedger: {
+      reward: 'Balance',
+      collateral: 'Balance',
     },
-    Status: {
-      _enum: ['Free', 'Reserved'],
+    Releases: {
+      _enum: ['V1_0_0', 'V2_0_0'],
     },
     Replica: {
       who: 'AccountId',
@@ -24,12 +23,13 @@ export default {
       anchor: 'SworkerAnchor',
       is_reported: 'bool',
     },
-    Releases: {
-      _enum: ['V1_0_0', 'V2_0_0'],
+    Status: {
+      _enum: ['Free', 'Reserved'],
     },
-    MerchantLedger: {
-      reward: 'Balance',
-      collateral: 'Balance',
+    UsedInfo: {
+      used_size: 'u64',
+      reported_group_count: 'u32',
+      groups: 'BTreeMap<SworkerAnchor, bool>',
     },
   },
 };
