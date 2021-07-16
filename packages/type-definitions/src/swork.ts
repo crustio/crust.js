@@ -1,6 +1,10 @@
 export default {
   rpc: {},
   types: {
+    Group: {
+      members: 'BTreeSet<AccountId>',
+      allowlist: 'BTreeSet<AccountId>',
+    },
     IASSig: 'Vec<u8>',
     Identity: {
       anchor: 'SworkerAnchor',
