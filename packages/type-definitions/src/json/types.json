@@ -55,6 +55,15 @@
         "value": "Compact<Balance>",
         "bn": "Compact<BlockNumber>"
     },
+    "Lock": {
+        "total": "Compact<Balance>",
+        "last_unlock_at": "BlockNumber",
+        "lock_type": "LockType"
+    },
+    "LockType": {
+        "delay": "BlockNumber",
+        "lock_period": "u32"
+    },
     "FileInfo": {
         "file_size": "u64",
         "expired_on": "BlockNumber",
@@ -99,6 +108,10 @@
     },
     "ValidatorPrefs": {
         "guarantee_fee": "Compact<Perbill>"
+    },
+    "Group": {
+        "members": "BTreeSet<AccountId>",
+        "allowlist": "BTreeSet<AccountId>"
     },
     "IASSig": "Vec<u8>",
     "Identity": {
