@@ -6,13 +6,10 @@ export default {
       spower: 'u64',
       expired_at: 'BlockNumber',
       calculated_at: 'BlockNumber',
-      amount: 'Balance',
-      prepaid: 'Balance',
+      amount: 'Compact<Balance>',
+      prepaid: 'Compact<Balance>',
       reported_replica_count: 'u32',
       replicas: 'Vec<Replica<AccountId>>',
-    },
-    Releases: {
-      _enum: ['V1_0_0', 'V2_0_0'],
     },
     Replica: {
       who: 'AccountId',
@@ -20,9 +17,6 @@ export default {
       anchor: 'SworkerAnchor',
       is_reported: 'bool',
       created_at: 'Option<BlockNumber>',
-    },
-    Status: {
-      _enum: ['Free', 'Reserved'],
     },
   },
 };

@@ -1,6 +1,5 @@
 import base from './base';
 import benefit from './benefit';
-import csmLocking from './csmLocking';
 import claims from './claims';
 import {
   jsonrpcFromDefs,
@@ -16,7 +15,6 @@ export const crustTypes = {
   base,
   benefit,
   claims,
-  csmLocking,
   locks,
   market,
   staking,
