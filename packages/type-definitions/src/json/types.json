@@ -66,16 +66,13 @@
     },
     "FileInfo": {
         "file_size": "u64",
-        "expired_on": "BlockNumber",
+        "spower": "u64",
+        "expired_at": "BlockNumber",
         "calculated_at": "BlockNumber",
         "amount": "Balance",
         "prepaid": "Balance",
         "reported_replica_count": "u32",
         "replicas": "Vec<Replica<AccountId>>"
-    },
-    "MerchantLedger": {
-        "reward": "Balance",
-        "collateral": "Balance"
     },
     "Releases": {
         "_enum": [
@@ -87,18 +84,14 @@
         "who": "AccountId",
         "valid_at": "BlockNumber",
         "anchor": "SworkerAnchor",
-        "is_reported": "bool"
+        "is_reported": "bool",
+        "created_at": "Option<BlockNumber>"
     },
     "Status": {
         "_enum": [
             "Free",
             "Reserved"
         ]
-    },
-    "UsedInfo": {
-        "used_size": "u64",
-        "reported_group_count": "u32",
-        "groups": "BTreeMap<SworkerAnchor, bool>"
     },
     "Guarantee": {
         "targets": "Vec<IndividualExposure<AccountId, Balance>>",
@@ -133,7 +126,7 @@
     "SworkerSignature": "Vec<u8>",
     "WorkReport": {
         "report_slot": "u64",
-        "used": "u64",
+        "spower": "u64",
         "free": "u64",
         "reported_files_size": "u64",
         "reported_srd_root": "MerkleRoot",
