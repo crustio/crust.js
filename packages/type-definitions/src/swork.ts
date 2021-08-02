@@ -25,7 +25,7 @@ export default {
     SworkerSignature: 'Vec<u8>',
     WorkReport: {
       report_slot: 'u64',
-      used: 'u64',
+      spower: 'u64',
       free: 'u64',
       reported_files_size: 'u64',
       reported_srd_root: 'MerkleRoot',

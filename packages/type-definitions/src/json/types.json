@@ -9,13 +9,6 @@
         "used_fee_reduction_quota": "Compact<Balance>",
         "active_era": "Compact<EraIndex>"
     },
-    "FeeReductionBenefit": {
-        "funds": "Balance",
-        "total_fee_reduction_count": "u32",
-        "used_fee_reduction_quota": "Balance",
-        "used_fee_reduction_count": "u32",
-        "refreshed_at": "EraIndex"
-    },
     "FundsType": {
         "_enum": [
             "SWORK",
@@ -42,19 +35,8 @@
         "refreshed_at": "Compact<EraIndex>",
         "unlocking_funds": "Vec<FundsUnlockChunk<Balance>>"
     },
-    "CsmBalance": "Balance",
-    "CsmBalanceOf": "Balance",
     "ETHAddress": "Vec<u8>",
     "EthereumTxHash": "H256",
-    "CSMLedger": {
-        "total": "Compact<Balance>",
-        "active": "Compact<Balance>",
-        "unlocking": "Vec<CSMUnlockChunk<Balance>>"
-    },
-    "CSMUnlockChunk": {
-        "value": "Compact<Balance>",
-        "bn": "Compact<BlockNumber>"
-    },
     "Lock": {
         "total": "Compact<Balance>",
         "last_unlock_at": "BlockNumber",
@@ -66,39 +48,20 @@
     },
     "FileInfo": {
         "file_size": "u64",
-        "expired_on": "BlockNumber",
+        "spower": "u64",
+        "expired_at": "BlockNumber",
         "calculated_at": "BlockNumber",
-        "amount": "Balance",
-        "prepaid": "Balance",
+        "amount": "Compact<Balance>",
+        "prepaid": "Compact<Balance>",
         "reported_replica_count": "u32",
         "replicas": "Vec<Replica<AccountId>>"
-    },
-    "MerchantLedger": {
-        "reward": "Balance",
-        "collateral": "Balance"
-    },
-    "Releases": {
-        "_enum": [
-            "V1_0_0",
-            "V2_0_0"
-        ]
     },
     "Replica": {
         "who": "AccountId",
         "valid_at": "BlockNumber",
         "anchor": "SworkerAnchor",
-        "is_reported": "bool"
-    },
-    "Status": {
-        "_enum": [
-            "Free",
-            "Reserved"
-        ]
-    },
-    "UsedInfo": {
-        "used_size": "u64",
-        "reported_group_count": "u32",
-        "groups": "BTreeMap<SworkerAnchor, bool>"
+        "is_reported": "bool",
+        "created_at": "Option<BlockNumber>"
     },
     "Guarantee": {
         "targets": "Vec<IndividualExposure<AccountId, Balance>>",
@@ -133,7 +96,7 @@
     "SworkerSignature": "Vec<u8>",
     "WorkReport": {
         "report_slot": "u64",
-        "used": "u64",
+        "spower": "u64",
         "free": "u64",
         "reported_files_size": "u64",
         "reported_srd_root": "MerkleRoot",

@@ -7,13 +7,6 @@ export default {
       used_fee_reduction_quota: 'Compact<Balance>',
       active_era: 'Compact<EraIndex>',
     },
-    FeeReductionBenefit: {
-      funds: 'Balance',
-      total_fee_reduction_count: 'u32',
-      used_fee_reduction_quota: 'Balance',
-      used_fee_reduction_count: 'u32',
-      refreshed_at: 'EraIndex',
-    },
     FundsType: {
       _enum: ['SWORK', 'MARKET'],
     },
