@@ -53,7 +53,7 @@ const mainnetBundle = {
     {
       minmax: [undefined, undefined] as any,
       types: {
-        ...mainnet,
+        ...mainnetTypes,
       },
     },
   ],
@@ -66,7 +66,7 @@ const maxwellBundle = {
     {
       minmax: [undefined, undefined] as any,
       types: {
-        ...maxwell,
+        ...maxwellTypes,
       },
     },
   ],
