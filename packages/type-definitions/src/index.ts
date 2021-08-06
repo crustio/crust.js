@@ -14,7 +14,7 @@ import maxwellBenefit from './maxwellBenefit';
 import maxwellMarket from './maxwellMarket';
 import maxwellSwork from './maxwellSwork';
 
-export const mainnet = {
+export const crust = {
   base,
   benefit,
   claims,
@@ -33,31 +33,31 @@ export const maxwell = {
   staking,
 };
 
-export const mainnetTypes = {
-  ...typesFromDefs(mainnet),
+export const crustTypes = {
+  ...typesFromDefs(crust),
 };
 
 export const maxwellTypes = {
   ...typesFromDefs(maxwell),
 };
 
-export const mainnetRpc = jsonrpcFromDefs(mainnet);
-export const mainnetTypesAlias = typesAliasFromDefs(mainnet);
+export const crustRpc = jsonrpcFromDefs(crust);
+export const crustTypesAlias = typesAliasFromDefs(crust);
 
 export const maxwellRpc = jsonrpcFromDefs(maxwell);
 export const maxwellTypesAlias = typesAliasFromDefs(maxwell);
 
-const mainnetBundle = {
-  rpc: mainnetRpc,
+const crustBundle = {
+  rpc: crustRpc,
   types: [
     {
       minmax: [undefined, undefined] as any,
       types: {
-        ...mainnetTypes,
+        ...crustTypes,
       },
     },
   ],
-  alias: mainnetTypesAlias,
+  alias: crustTypesAlias,
 };
 
 const maxwellBundle = {
@@ -76,7 +76,7 @@ const maxwellBundle = {
 // Type overrides have priority issues
 export const typesBundleForPolkadot = {
   spec: {
-    crust: mainnetBundle,
+    crust: crustBundle,
     maxwell: maxwellBundle,
   },
 };
