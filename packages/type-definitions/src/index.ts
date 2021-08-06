@@ -10,8 +10,11 @@ import locks from './locks';
 import market from './market';
 import staking from './staking';
 import swork from './swork';
+import maxwellBenefit from './maxwellBenefit';
+import maxwellMarket from './maxwellMarket';
+import maxwellSwork from './maxwellSwork';
 
-export const crustTypes = {
+export const mainnet = {
   base,
   benefit,
   claims,
@@ -21,29 +24,59 @@ export const crustTypes = {
   swork,
 };
 
-export const types = {
-  ...typesFromDefs(crustTypes),
+export const maxwell = {
+  base,
+  claims,
+  maxwellBenefit,
+  maxwellMarket,
+  maxwellSwork,
+  staking,
 };
 
-export const rpc = jsonrpcFromDefs(crustTypes);
-export const typesAlias = typesAliasFromDefs(crustTypes);
+export const mainnetTypes = {
+  ...typesFromDefs(mainnet),
+};
 
-const bundle = {
-  rpc,
+export const maxwellTypes = {
+  ...typesFromDefs(maxwell),
+};
+
+export const mainnetRpc = jsonrpcFromDefs(mainnet);
+export const mainnetTypesAlias = typesAliasFromDefs(mainnet);
+
+export const maxwellRpc = jsonrpcFromDefs(maxwell);
+export const maxwellTypesAlias = typesAliasFromDefs(maxwell);
+
+const mainnetBundle = {
+  rpc: mainnetRpc,
   types: [
     {
       minmax: [undefined, undefined] as any,
       types: {
-        ...types,
+        ...mainnet,
       },
     },
   ],
-  alias: typesAlias,
+  alias: mainnetTypesAlias,
+};
+
+const maxwellBundle = {
+  rpc: maxwellRpc,
+  types: [
+    {
+      minmax: [undefined, undefined] as any,
+      types: {
+        ...maxwell,
+      },
+    },
+  ],
+  alias: maxwellTypesAlias,
 };
 
 // Type overrides have priority issues
 export const typesBundleForPolkadot = {
   spec: {
-    crust: bundle,
+    crust: mainnetBundle,
+    maxwell: maxwellBundle,
   },
 };
