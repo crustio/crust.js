@@ -1,5 +1,6 @@
 import base from './base';
 import benefit from './benefit';
+import bridge from './bridge';
 import claims from './claims';
 import {
   jsonrpcFromDefs,
@@ -14,6 +15,7 @@ import swork from './swork';
 export const crustTypes = {
   base,
   benefit,
+  bridge,
   claims,
   locks,
   market,
