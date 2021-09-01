@@ -37,10 +37,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@crustio/type-definitions@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@crustio/type-definitions/-/type-definitions-0.0.5.tgz#6be9cd9ed8ee34d6b67176f8860793b94ed72699"
-  integrity sha512-MhozPIjg4iFelKebCgQKSlz+Nm/swbdZpAeJkw+Q6IHxDws57sodpy5EMDBEgszTsB71XDouSmQzgh3or1XrsQ==
+"@crustio/type-definitions@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@crustio/type-definitions/-/type-definitions-1.2.0.tgz#221a626b8e18ac77fb9e13e6b018803e78727b71"
+  integrity sha512-i/u3WUuhfC76JirlSwyGIKDwoFrax5QUonxGG/wgX2KEDKM9MIVx4qEsphE/tjAxlX1/qO3c72dzvKR2gndhgg==
   dependencies:
     "@open-web3/orml-type-definitions" "^0.8.2-9"
 

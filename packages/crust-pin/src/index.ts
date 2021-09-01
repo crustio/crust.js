@@ -6,7 +6,7 @@ export default class CrustPinner {
   readonly seeds: string;
   readonly crustApi: ApiPromise;
 
-  constructor(s: string, chainAddr = 'wss://api.crust.network') {
+  constructor(s: string, chainAddr = 'wss://rpc.crust.network') {
     this.seeds = s;
     this.crustApi = new ApiPromise({
       provider: new WsProvider(chainAddr),
@@ -23,7 +23,8 @@ export default class CrustPinner {
       const tx = this.crustApi.tx.market.placeStorageOrder(
         cid,
         200 * 1024 * 1024 /* 200MB */,
-        0
+        0,
+        ''
       );
 
       const res = await sendTx(tx, this.seeds);
