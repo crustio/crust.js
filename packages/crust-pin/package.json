@@ -1,6 +1,6 @@
 {
   "name": "@crustio/crust-pin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Decentralized pin on Crust Network",
   "main": "src/index.js",
   "license": "Apache-2.0",
@@ -18,7 +18,7 @@
     "fix": "gts fix"
   },
   "dependencies": {
-    "@crustio/type-definitions": "^0.0.5",
+    "@crustio/type-definitions": "^1.2.0",
     "@polkadot/api": "^4.2.1"
   },
   "devDependencies": {
