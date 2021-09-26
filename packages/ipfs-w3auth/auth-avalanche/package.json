@@ -1,7 +1,7 @@
 {
-  "name": "@crustio/auth-avalanche",
+  "name": "@crustio/ipfs-w3auth-avalanche",
   "version": "0.0.1",
-  "description": "Polkadot.js type definitions for Crust Network",
+  "description": "Avalanche authentication of IPFS W3Auth",
   "main": "./src/index.js",
   "license": "Apache-2.0",
   "scripts": {

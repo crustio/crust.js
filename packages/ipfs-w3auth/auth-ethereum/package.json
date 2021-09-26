@@ -1,7 +1,7 @@
 {
-  "name": "@crustio/auth-ethereum",
+  "name": "@crustio/ipfs-w3auth-ethereum",
   "version": "0.0.1",
-  "description": "Polkadot.js type definitions for Crust Network",
+  "description": "Ethereum authentication of IPFS W3Auth",
   "main": "./src/index.js",
   "license": "Apache-2.0",
   "scripts": {

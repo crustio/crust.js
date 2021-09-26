@@ -1,8 +1,8 @@
 import {AuthData, AuthError} from './types';
-import SubstrateAuth from '@crustio/auth-substrate';
-import EthAuth from '@crustio/auth-ethereum';
-import SolanaAuth from '@crustio/auth-solana';
-import AvalancheAuth from '@crustio/auth-avalanche';
+import SubstrateAuth from '@crustio/ipfs-w3auth-substrate';
+import EthAuth from '@crustio/ipfs-w3auth-ethereum';
+import SolanaAuth from '@crustio/ipfs-w3auth-solana';
+import AvalancheAuth from '@crustio/ipfs-w3auth-avalanche';
 
 const _ = require('lodash');
 

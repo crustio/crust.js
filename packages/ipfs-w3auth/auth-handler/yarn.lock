@@ -37,27 +37,35 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@crustio/auth-avalanche@file:../auth-avalanche/build":
+"@crustio/ipfs-w3auth-avalanche@^0.0.1":
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@crustio/ipfs-w3auth-avalanche/-/ipfs-w3auth-avalanche-0.0.1.tgz#56de73a1d99e14a286edb4d059ea574d28b6fdb8"
+  integrity sha512-a8gw0teyXZ5waMriKJr1DLZFoYH2LUD/I0OiW5vl/jcrYmdrljesTMRXvQo8IJjq7VFznhhP3bOtU1ZPu+t5mw==
   dependencies:
     avalanche "3.8.1"
     create-hash "1.2.0"
     lodash "^4.17.21"
 
-"@crustio/auth-ethereum@file:../auth-ethereum/build":
+"@crustio/ipfs-w3auth-ethereum@^0.0.1":
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@crustio/ipfs-w3auth-ethereum/-/ipfs-w3auth-ethereum-0.0.1.tgz#99191e44f76f9f61acb4b1d23eda79825b81ab27"
+  integrity sha512-ftGcdrQfg5FBHHgL0zca9Hlf3R+Z2bUzMSbeY7sj+NiyGSGduPza+OSq2iUk5FjM5UEXPjwCFBEekTit9NkdDw==
   dependencies:
     ethers "^5.4.6"
     lodash "^4.17.21"
 
-"@crustio/auth-solana@file:../auth-solana/build":
+"@crustio/ipfs-w3auth-solana@^0.0.1":
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@crustio/ipfs-w3auth-solana/-/ipfs-w3auth-solana-0.0.1.tgz#cd61782b7872f3e7cabe60636bf5ff8aeb539029"
+  integrity sha512-6qX5z9TVRIYv+THmW01BrZ9wlR7DWqGpVkgdk/b7b7Y50uQWCfAkqgDZ36+nxrNY1I4PVq+2SN6aT5qwd/VSSw==
   dependencies:
     bs58 "^4.0.1"
     tweetnacl "^1.0.3"
 
-"@crustio/auth-substrate@file:../auth-substrate/build":
+"@crustio/ipfs-w3auth-substrate@^0.0.1":
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@crustio/ipfs-w3auth-substrate/-/ipfs-w3auth-substrate-0.0.1.tgz#3f07b990b03f988a8d40017425230f71ad191804"
+  integrity sha512-4lTMIC3tOpeCefQnw5IIOHgrLE/a06QgfqNzMHafSkKKhRn7wEtZBgPeWAGC9m5oE0Wr8ikRLdLTnwIVGOp6Jg==
   dependencies:
     "@polkadot/api" "^5.6.1"
 

@@ -1,7 +1,7 @@
 {
-  "name": "@crustio/auth-handler",
+  "name": "@crustio/ipfs-w3auth-handler",
   "version": "0.0.1",
-  "description": "Polkadot.js type definitions for Crust Network",
+  "description": "IPFS W3Auth express middleware",
   "main": "./src/index.js",
   "license": "Apache-2.0",
   "scripts": {
@@ -12,10 +12,10 @@
     "fix": "gts fix"
   },
   "dependencies": {
-    "@crustio/auth-avalanche": "file:../auth-avalanche/build",
-    "@crustio/auth-ethereum": "file:../auth-ethereum/build",
-    "@crustio/auth-solana": "file:../auth-solana/build",
-    "@crustio/auth-substrate": "file:../auth-substrate/build",
+    "@crustio/ipfs-w3auth-avalanche": "^0.0.1",
+    "@crustio/ipfs-w3auth-ethereum": "^0.0.1",
+    "@crustio/ipfs-w3auth-solana": "^0.0.1",
+    "@crustio/ipfs-w3auth-substrate": "^0.0.1",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "winston": "^3.3.3"
