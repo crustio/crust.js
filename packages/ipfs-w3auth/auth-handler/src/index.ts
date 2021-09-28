@@ -56,7 +56,6 @@ async function auth(req: Request, res: Response, next: any) {
         })
       );
     }
-
   } catch (error: any) {
     console.error(error.message);
     res.writeHead(401, {'Content-Type': 'application/json'});
