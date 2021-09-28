@@ -38,7 +38,7 @@ async function auth(req: Request, res: Response, next: any) {
       : `sub${chainTypeDelimiter}${passedAddress}`;
     const [chainType, address] = _.split(gaugedAddress, chainTypeDelimiter);
 
-    isValid = authRegistry.auth(chainType, {
+    isValid = await authRegistry.auth(chainType, {
       address,
       signature: sig,
     });
@@ -49,7 +49,7 @@ async function auth(req: Request, res: Response, next: any) {
     } else {
       console.error('Validation failed');
       res.writeHead(401, {'Content-Type': 'application/json'});
-  
+
       res.end(
         JSON.stringify({
           Error: 'Invalid Signature',
