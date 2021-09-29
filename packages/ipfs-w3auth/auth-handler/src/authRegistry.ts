@@ -3,6 +3,7 @@ import SubstrateAuth from '@crustio/ipfs-w3auth-substrate';
 import EthAuth from '@crustio/ipfs-w3auth-ethereum';
 import SolanaAuth from '@crustio/ipfs-w3auth-solana';
 import AvalancheAuth from '@crustio/ipfs-w3auth-avalanche';
+import FlowAuth from '@crustio/ipfs-w3auth-flow';
 
 const _ = require('lodash');
 
@@ -15,6 +16,7 @@ const authProviders = {
   ...mapBySigType(['ethereum', 'eth', 'polygon', 'pol'], EthAuth),
   ...mapBySigType(['solana', 'sol', 'near', 'nea'], SolanaAuth),
   ...mapBySigType(['avalanche', 'ava'], AvalancheAuth),
+  ...mapBySigType(['flow'], FlowAuth),
 };
 
 function auth(signatureType: string, data: AuthData): boolean {
