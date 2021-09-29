@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-avalanche",
+  "name": "@crustio/ipfs-w3auth-flow",
   "version": "0.0.1",
   "description": "Flow authentication of IPFS W3Auth",
   "main": "./src/index.js",
