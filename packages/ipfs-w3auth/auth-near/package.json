@@ -1,7 +1,7 @@
 {
-  "name": "@crustio/ipfs-w3auth-solana",
+  "name": "@crustio/ipfs-w3auth-near",
   "version": "0.0.1",
-  "description": "Solana authentication of IPFS W3Auth",
+  "description": "Near authentication of IPFS W3Auth",
   "main": "./src/index.js",
   "license": "Apache-2.0",
   "scripts": {
