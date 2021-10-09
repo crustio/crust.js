@@ -17,8 +17,8 @@ const authProviders = {
   ...mapBySigType(['ethereum', 'eth', 'polygon', 'pol'], EthAuth),
   ...mapBySigType(['solana', 'sol', 'near', 'nea'], SolanaAuth),
   ...mapBySigType(['avalanche', 'ava'], AvalancheAuth),
-  ...mapBySigType(['flow'], FlowAuth),
-  ...mapBySigType(['elrond'], ElrondAuth),
+  ...mapBySigType(['flow', 'flo'], FlowAuth),
+  ...mapBySigType(['elrond','elr'], ElrondAuth),
 };
 
 function auth(signatureType: string, data: AuthData): boolean {
