@@ -4,6 +4,7 @@ import EthAuth from '@crustio/ipfs-w3auth-ethereum';
 import SolanaAuth from '@crustio/ipfs-w3auth-solana';
 import AvalancheAuth from '@crustio/ipfs-w3auth-avalanche';
 import FlowAuth from '@crustio/ipfs-w3auth-flow';
+import ElrondAuth from '@crustio/ipfs-w3auth-elrond';
 
 const _ = require('lodash');
 
@@ -17,6 +18,7 @@ const authProviders = {
   ...mapBySigType(['solana', 'sol', 'near', 'nea'], SolanaAuth),
   ...mapBySigType(['avalanche', 'ava'], AvalancheAuth),
   ...mapBySigType(['flow'], FlowAuth),
+  ...mapBySigType(['elrond'], ElrondAuth),
 };
 
 function auth(signatureType: string, data: AuthData): boolean {
