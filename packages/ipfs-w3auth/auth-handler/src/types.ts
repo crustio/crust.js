@@ -1,6 +1,7 @@
 interface AuthData {
   address: string;
   signature: string;
+  txMsg: string;
 }
 
 class AuthError extends Error {

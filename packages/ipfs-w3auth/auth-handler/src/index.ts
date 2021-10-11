@@ -36,10 +36,11 @@ async function auth(req: Request, res: Response, next: any) {
     const gaugedAddress = _.includes(passedAddress, chainTypeDelimiter)
       ? passedAddress
       : `sub${chainTypeDelimiter}${passedAddress}`;
-    const [chainType, address] = _.split(gaugedAddress, chainTypeDelimiter);
+    const [chainType, address, txMsg] = _.split(gaugedAddress, chainTypeDelimiter);
 
     isValid = await authRegistry.auth(chainType, {
       address,
+      txMsg,
       signature: sig,
     });
 

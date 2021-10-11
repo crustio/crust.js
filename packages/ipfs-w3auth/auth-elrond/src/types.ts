@@ -1,5 +1,6 @@
 interface AuthData {
   address: string;
+  txMsg: string,
   signature: string;
 }
 
