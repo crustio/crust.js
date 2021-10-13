@@ -1,11 +1,11 @@
-import {Response} from 'express';
+import {Request} from 'express';
 import {AuthError} from './types';
 import authRegistry from './authRegistry';
 const _ = require('lodash');
 const chainTypeDelimiter = '-';
 const pkSigDelimiter = ':';
 
-async function auth(req: any, res: Response, next: any) {
+async function auth(req: Request, res: any, next: any) {
   // 1. Parse basic auth header 'Authorization: Basic [AuthToken]'
   if (
     !_.includes(req.headers.authorization, 'Basic ') &&
@@ -49,11 +49,12 @@ async function auth(req: any, res: Response, next: any) {
       signature: sig,
     });
 
-    if (result.success === true) {
+    if (result === true) {
       console.log(
-        `Validate chainType: ${result.chainType} address: ${address} success`
+        `Validate chainType: ${chainType} address: ${address} success`
       );
-      req.authResult = result;
+      res.chainType = chainType;
+      res.chainAddress = address;
       next();
     } else {
       console.error('Validation failed');

@@ -1,4 +1,4 @@
-import {AuthData, AuthResult, AuthError} from './types';
+import {AuthData, AuthError} from './types';
 import SubstrateAuth from '@crustio/ipfs-w3auth-substrate';
 import EthAuth from '@crustio/ipfs-w3auth-ethereum';
 import SolanaAuth from '@crustio/ipfs-w3auth-solana';
@@ -8,33 +8,20 @@ import ElrondAuth from '@crustio/ipfs-w3auth-elrond';
 
 const _ = require('lodash');
 
-const mapBySigType = (
-  sigTypes: string[],
-  authObject: object,
-  chainType: number
-) => {
-  return _.zipObject(
-    sigTypes,
-    _.fill(Array(_.size(sigTypes)), {
-      chainType: chainType,
-      authObj: authObject,
-    })
-  );
+const mapBySigType = (sigTypes: string[], authObject: object) => {
+  return _.zipObject(sigTypes, _.fill(Array(_.size(sigTypes)), authObject));
 };
 
 const authProviders = {
-  ...mapBySigType(['substrate', 'sub', 'crust', 'cru'], SubstrateAuth, 0),
-  ...mapBySigType(['ethereum', 'eth', 'polygon', 'pol'], EthAuth, 1),
-  ...mapBySigType(['solana', 'sol', 'near', 'nea'], SolanaAuth, 2),
-  ...mapBySigType(['avalanche', 'ava'], AvalancheAuth, 3),
-  ...mapBySigType(['flow', 'flo'], FlowAuth, 4),
-  ...mapBySigType(['elrond', 'elr'], ElrondAuth, 5),
+  ...mapBySigType(['substrate', 'sub', 'crust', 'cru'], SubstrateAuth),
+  ...mapBySigType(['ethereum', 'eth', 'polygon', 'pol'], EthAuth),
+  ...mapBySigType(['solana', 'sol', 'near', 'nea'], SolanaAuth),
+  ...mapBySigType(['avalanche', 'ava'], AvalancheAuth),
+  ...mapBySigType(['flow', 'flo'], FlowAuth),
+  ...mapBySigType(['elrond', 'elr'], ElrondAuth),
 };
 
-async function auth(
-  signatureType: string,
-  data: AuthData
-): Promise<AuthResult> {
+function auth(signatureType: string, data: AuthData): boolean {
   const authProvider = _.get(
     authProviders,
     _.toLower(_.trim(signatureType)),
@@ -43,12 +30,7 @@ async function auth(
   if (_.isEmpty(authProvider)) {
     throw new AuthError('Unsupported web3 signature');
   }
-  const result: AuthResult = {
-    success: await authProvider.authObj.auth(data),
-    chainType: authProvider.chainType,
-    address: data.address,
-  };
-  return result;
+  return authProvider.auth(data);
 }
 
 export default {
