@@ -4,6 +4,12 @@ interface AuthData {
   txMsg: string;
 }
 
+interface AuthResult {
+  success: boolean;
+  chainType: number;
+  address: string;
+}
+
 class AuthError extends Error {
   constructor(msg: string) {
     super(msg);
@@ -11,4 +17,4 @@ class AuthError extends Error {
   }
 }
 
-export {AuthData, AuthError};
+export {AuthData, AuthError, AuthResult};
