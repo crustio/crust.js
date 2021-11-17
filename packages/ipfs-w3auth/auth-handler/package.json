@@ -18,6 +18,7 @@
     "@crustio/ipfs-w3auth-substrate": "^0.0.1",
     "@crustio/ipfs-w3auth-flow": "^0.0.1",
     "@crustio/ipfs-w3auth-elrond": "^0.0.1",
+    "@crustio/ipfs-w3auth-huochain": "^0.0.1",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "winston": "^3.3.3"
