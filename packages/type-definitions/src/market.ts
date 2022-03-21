@@ -12,15 +12,15 @@ export default {
       replicas: 'Vec<Replica<AccountId>>',
     },
     FileInfoV2: {
-      file_size: "u64",
-      spower: "u64",
-      expired_at: "BlockNumber",
-      calculated_at: "BlockNumber",
-      amount: "Compact<Balance>",
-      prepaid: "Compact<Balance>",
-      reported_replica_count: "u32",
-      remaining_paid_count: "u32",
-      replicas: "BTreeMap<AccountId, Replica<AccountId>>"
+      file_size: 'u64',
+      spower: 'u64',
+      expired_at: 'BlockNumber',
+      calculated_at: 'BlockNumber',
+      amount: 'Compact<Balance>',
+      prepaid: 'Compact<Balance>',
+      reported_replica_count: 'u32',
+      remaining_paid_count: 'u32',
+      replicas: 'BTreeMap<AccountId, Replica<AccountId>>'
     },
     Replica: {
       who: 'AccountId',
