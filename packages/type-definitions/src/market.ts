@@ -20,7 +20,7 @@ export default {
       prepaid: 'Compact<Balance>',
       reported_replica_count: 'u32',
       remaining_paid_count: 'u32',
-      replicas: 'BTreeMap<AccountId, Replica<AccountId>>'
+      replicas: 'BTreeMap<AccountId, Replica<AccountId>>',
     },
     Replica: {
       who: 'AccountId',
