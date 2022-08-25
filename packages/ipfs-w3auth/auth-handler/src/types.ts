@@ -2,6 +2,7 @@ interface AuthData {
   address: string;
   signature: string;
   txMsg: string;
+  tyMsg: string;
 }
 
 class AuthError extends Error {
