@@ -56,6 +56,8 @@ async function auth(req: Request, res: any, next: any) {
       );
       res.chainType = chainType;
       res.chainAddress = address;
+      res.txMsg = txMsg;
+      res.tyMsg = tyMsg;
       next();
     } else {
       console.error('Validation failed');
