@@ -3,6 +3,7 @@ package main
 import (
 	"crypto"
 	"encoding/base64"
+	"fmt"
 	"hash"
 
 	"gitlab.com/xx_network/crypto/signature/rsa"
@@ -23,22 +24,26 @@ func verifyVerificationSignature(data *DataForVerify) error {
 	// Get pubkey
 	pubKeyTrue, err := base64.StdEncoding.DecodeString(data.PubKey)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
 
 	pubKey, err := rsa.LoadPublicKeyFromPem(pubKeyTrue)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
 
 	// Convert receptionPubKey and signature
 	receptionPubKey, err := base64.StdEncoding.DecodeString(data.ReceptionPubKey)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
 
 	signature, err := base64.StdEncoding.DecodeString(data.Signature)
 	if err != nil {
+		fmt.Println(err)
 		return err
 	}
 

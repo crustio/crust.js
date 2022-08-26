@@ -10,11 +10,14 @@ func verify(w http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case "POST":
 		param := &DataForVerify{}
+
 		err := json.NewDecoder(req.Body).Decode(param)
 		if err != nil || param.PubKey == "" || param.UserName == "" ||
 			param.Signature == "" || param.ReceptionPubKey == "" {
 			w.WriteHeader(http.StatusBadRequest)
 		} else {
+			pstr, _ := json.Marshal(param)
+			fmt.Println(pstr)
 			err = verifyVerificationSignature(param)
 			if err != nil {
 				fmt.Println(err)
@@ -29,5 +32,6 @@ func verify(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/verify", verify)
+	fmt.Println("XX validator listen on 38297 port...")
 	_ = http.ListenAndServe(":38297", nil)
 }
