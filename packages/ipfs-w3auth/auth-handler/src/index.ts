@@ -30,7 +30,7 @@ async function auth(req: Request, res: any, next: any) {
       'ascii'
     );
 
-    // 3. Parse AuthToken as `ChainType[substrate/eth/solana].PubKey:SignedMsg`
+    // 3. Parse AuthToken as `ChainType[substrate/eth/solana]-PubKey-txMsg-tyMsg:SignedMsg`
     const [passedAddress, sig] = _.split(credentials, pkSigDelimiter);
     console.log(`Got public address '${passedAddress}' and sigature '${sig}'`);
 
