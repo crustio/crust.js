@@ -12,12 +12,12 @@ func verify(w http.ResponseWriter, req *http.Request) {
 		param := &DataForVerify{}
 
 		err := json.NewDecoder(req.Body).Decode(param)
+		pstr, _ := json.Marshal(param)
+		fmt.Println(pstr)
 		if err != nil || param.PubKey == "" || param.UserName == "" ||
 			param.Signature == "" || param.ReceptionPubKey == "" {
 			w.WriteHeader(http.StatusBadRequest)
 		} else {
-			pstr, _ := json.Marshal(param)
-			fmt.Println(pstr)
 			err = verifyVerificationSignature(param)
 			if err != nil {
 				fmt.Println(err)
