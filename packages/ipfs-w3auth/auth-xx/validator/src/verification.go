@@ -21,7 +21,12 @@ func verifyVerificationSignature(data *DataForVerify) error {
 	userNameHash := hashUsername(data.UserName)
 
 	// Get pubkey
-	pubKey, err := rsa.LoadPublicKeyFromPem([]byte(data.PubKey))
+	pubKeyTrue, err := base64.StdEncoding.DecodeString(data.PubKey)
+	if err != nil {
+		return err
+	}
+
+	pubKey, err := rsa.LoadPublicKeyFromPem(pubKeyTrue)
 	if err != nil {
 		return err
 	}
