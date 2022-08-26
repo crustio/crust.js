@@ -13,7 +13,7 @@ func verify(w http.ResponseWriter, req *http.Request) {
 
 		err := json.NewDecoder(req.Body).Decode(param)
 		pstr, _ := json.Marshal(param)
-		fmt.Println(pstr)
+		fmt.Println(string(pstr))
 		if err != nil || param.PubKey == "" || param.UserName == "" ||
 			param.Signature == "" || param.ReceptionPubKey == "" {
 			w.WriteHeader(http.StatusBadRequest)
