@@ -51,6 +51,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@crustio/ipfs-w3auth-aptos@file:../auth-aptos/build":
+  version "0.0.1"
+  dependencies:
+    tweetnacl "^1.0.3"
+
 "@crustio/ipfs-w3auth-avalanche@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@crustio/ipfs-w3auth-avalanche/-/ipfs-w3auth-avalanche-0.0.1.tgz#56de73a1d99e14a286edb4d059ea574d28b6fdb8"
