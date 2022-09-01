@@ -11,6 +11,7 @@ import locks from './locks';
 import market from './market';
 import staking from './staking';
 import swork from './swork';
+import verifier from './verifier';
 
 export const crustTypes = {
   base,
@@ -21,6 +22,7 @@ export const crustTypes = {
   market,
   staking,
   swork,
+  verifier,
 };
 
 export const types = {
