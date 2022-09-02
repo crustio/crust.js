@@ -30,7 +30,7 @@ async function auth(req: Request, res: any, next: any) {
       'ascii'
     );
 
-    // 3. Parse AuthToken as `ChainType[substrate/eth/solana].PubKey:SignedMsg`
+    // 3. Parse AuthToken as `ChainType[substrate/eth/solana]-PubKey-txMsg-tyMsg:SignedMsg`
     const [passedAddress, sig] = _.split(credentials, pkSigDelimiter);
     console.log(`Got public address '${passedAddress}' and sigature '${sig}'`);
 
@@ -38,7 +38,7 @@ async function auth(req: Request, res: any, next: any) {
     const gaugedAddress = _.includes(passedAddress, chainTypeDelimiter)
       ? passedAddress
       : `sub${chainTypeDelimiter}${passedAddress}`;
-    const [chainType, address, txMsg] = _.split(
+    const [chainType, address, txMsg, tyMsg] = _.split(
       gaugedAddress,
       chainTypeDelimiter
     );
@@ -46,6 +46,7 @@ async function auth(req: Request, res: any, next: any) {
     const result = await authRegistry.auth(chainType, {
       address,
       txMsg,
+      tyMsg,
       signature: sig,
     });
 
@@ -55,6 +56,8 @@ async function auth(req: Request, res: any, next: any) {
       );
       res.chainType = chainType;
       res.chainAddress = address;
+      res.txMsg = txMsg;
+      res.tyMsg = tyMsg;
       next();
     } else {
       console.error('Validation failed');
