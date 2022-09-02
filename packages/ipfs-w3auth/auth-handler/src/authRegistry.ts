@@ -6,6 +6,7 @@ import AvalancheAuth from '@crustio/ipfs-w3auth-avalanche';
 import FlowAuth from '@crustio/ipfs-w3auth-flow';
 import ElrondAuth from '@crustio/ipfs-w3auth-elrond';
 import XXAuth from '@crustio/ipfs-w3auth-xx';
+import AptosAuth from '@crustio/ipfs-w3auth-aptos';
 
 const _ = require('lodash');
 
@@ -21,6 +22,7 @@ const authProviders = {
   ...mapBySigType(['flow', 'flo'], FlowAuth),
   ...mapBySigType(['elrond', 'elr'], ElrondAuth),
   ...mapBySigType(['xx'], XXAuth),
+  ...mapBySigType(['aptos', 'apt'], AptosAuth),
 };
 
 async function auth(signatureType: string, data: AuthData): Promise<boolean> {
