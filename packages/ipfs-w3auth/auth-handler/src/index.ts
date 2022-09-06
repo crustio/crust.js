@@ -1,5 +1,5 @@
-import {Request} from 'express';
-import {AuthError} from './types';
+import { Request } from 'express';
+import { AuthError } from './types';
 import authRegistry from './authRegistry';
 const _ = require('lodash');
 const chainTypeDelimiter = '-';
@@ -11,7 +11,7 @@ async function auth(req: Request, res: any, next: any) {
     !_.includes(req.headers.authorization, 'Basic ') &&
     !_.includes(req.headers.authorization, 'Bearer ')
   ) {
-    res.writeHead(401, {'Content-Type': 'application/json'});
+    res.writeHead(401, { 'Content-Type': 'application/json' });
     res.end(
       JSON.stringify({
         Error: 'Empty Signature',
@@ -30,7 +30,7 @@ async function auth(req: Request, res: any, next: any) {
       'ascii'
     );
 
-    // 3. Parse AuthToken as `ChainType[substrate/eth/solana]-PubKey-txMsg-tyMsg:SignedMsg`
+    // 3. Parse AuthToken as `ChainType[substrate/eth/solana]-PubKey-txMsg-tyMsg-tzMsg-tkMsg:SignedMsg`
     const [passedAddress, sig] = _.split(credentials, pkSigDelimiter);
     console.log(`Got public address '${passedAddress}' and sigature '${sig}'`);
 
@@ -38,7 +38,7 @@ async function auth(req: Request, res: any, next: any) {
     const gaugedAddress = _.includes(passedAddress, chainTypeDelimiter)
       ? passedAddress
       : `sub${chainTypeDelimiter}${passedAddress}`;
-    const [chainType, address, txMsg, tyMsg] = _.split(
+    const [chainType, address, txMsg, tyMsg, tzMsg, tkMsg] = _.split(
       gaugedAddress,
       chainTypeDelimiter
     );
@@ -47,6 +47,8 @@ async function auth(req: Request, res: any, next: any) {
       address,
       txMsg,
       tyMsg,
+      tzMsg,
+      tkMsg,
       signature: sig,
     });
 
@@ -61,7 +63,7 @@ async function auth(req: Request, res: any, next: any) {
       next();
     } else {
       console.error('Validation failed');
-      res.writeHead(401, {'Content-Type': 'application/json'});
+      res.writeHead(401, { 'Content-Type': 'application/json' });
 
       res.end(
         JSON.stringify({
@@ -71,7 +73,7 @@ async function auth(req: Request, res: any, next: any) {
     }
   } catch (error: any) {
     console.error(error.message);
-    res.writeHead(401, {'Content-Type': 'application/json'});
+    res.writeHead(401, { 'Content-Type': 'application/json' });
     res.end(
       JSON.stringify({
         Error: error instanceof AuthError ? error.message : 'Invalid Signature',

@@ -10,10 +10,12 @@ async function auth(data: AuthData): Promise<boolean> {
     }
 
     const res = await axios.post(`${host}/verify`, {
-      pubKey: data.address,
-      signature: data.signature,
+      userPubKey: data.address,
       userName: data.txMsg,
-      receptionPubKey: data.tyMsg
+      verifSig: data.signature,
+      fileHash: data.tyMsg,
+      timestamp: data.tzMsg,
+      uploadSig: data.tkMsg,
     })
 
     if (res.status == 200) {

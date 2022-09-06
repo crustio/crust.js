@@ -9,6 +9,7 @@ import (
 	"gitlab.com/xx_network/crypto/signature/rsa"
 )
 
+// For test
 const (
 	UDPubkeyEncoded = `-----BEGIN RSA PRIVATE KEY-----
 MIIJKQIBAAKCAgEAtr55qU5p/QiNjQf/dGfazkM6tbU6Rdj0mcmEzKIF+X2TO3dH

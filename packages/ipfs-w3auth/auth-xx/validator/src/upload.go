@@ -10,6 +10,7 @@ import (
 	"gitlab.com/xx_network/crypto/signature/rsa"
 )
 
+// For test
 const (
 	uploadGracePeriod = 100000 * time.Hour
 )
