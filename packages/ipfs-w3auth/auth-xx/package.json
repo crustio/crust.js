@@ -1,6 +1,6 @@
 {
   "name": "@crustio/ipfs-w3auth-xx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "XX network authentication of IPFS W3Auth",
   "main": "./src/index.js",
   "license": "Apache-2.0",
