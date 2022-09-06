@@ -12,7 +12,7 @@ import (
 
 // For test
 const (
-	uploadGracePeriod = 100000 * time.Hour
+	uploadGracePeriod = 1 * time.Minute
 )
 
 // VerifyUpload verifies the user's upload signature. The signature
