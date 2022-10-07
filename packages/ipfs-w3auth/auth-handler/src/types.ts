@@ -12,4 +12,27 @@ class AuthError extends Error {
   }
 }
 
-export {AuthData, AuthError};
+class Failure {
+  error: FailureError;
+
+  constructor(error: FailureError) {
+    this.error = error;
+  }
+
+  static unauthorized(details: string): Failure {
+    return new Failure(new FailureError('UNAUTHORIZED', details));
+  }
+}
+
+class FailureError {
+  reason: string;
+  details: string;
+
+  constructor(reason: string, details: string) {
+    this.reason = reason;
+    this.details = details;
+  }
+}
+
+
+export {AuthData, AuthError, Failure, FailureError};
