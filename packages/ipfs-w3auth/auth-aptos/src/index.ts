@@ -32,6 +32,16 @@ function auth(data: AuthData): boolean {
       return true;
   };
 
+  // Adapt to the petra
+  const addressWithAptosPrefixAndNoncePendix = `APTOS\nmessage: ${address}\nnonce: crust`;
+  if (nacl.sign.detached.verify(
+    new TextEncoder().encode(addressWithAptosPrefixAndNoncePendix),
+    Uint8Array.from(Buffer.from(signatureWithoutHexPrefix, 'hex')),
+    Uint8Array.from(Buffer.from(addressWithoutHexPrefix, 'hex')))
+    ) {
+      return true;
+  };
+
   // Adapt to the martian v0.2.x
   const addressWithAptosPrefix = `APTOS\nmessage: ${address}`;
   if (nacl.sign.detached.verify(
