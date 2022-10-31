@@ -12,6 +12,7 @@
     "fix": "gts fix"
   },
   "dependencies": {
+    "@metamask/eth-sig-util": "^5.0.0",
     "ethers": "^5.4.6",
     "lodash": "^4.17.21"
   },
