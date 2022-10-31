@@ -1,6 +1,7 @@
 import {AuthData} from './types';
 import * as _ from 'lodash';
 import {ethers} from 'ethers';
+import {recoverPersonalSignature} from '@metamask/eth-sig-util';
 
 function addressesEquals(address: string, recoverAddress: string): boolean {
   return _.toLower(_.trim(recoverAddress)) === _.toLower(_.trim(address));
@@ -28,6 +29,13 @@ function auth(data: AuthData): boolean {
     messageHash,
     signatureWithPrefix
   );
+  if (addressesEquals(address, recoveredAddress)) {
+    return true;
+  }
+
+  // verify with @metamask/eth-sig-util
+  recoveredAddress = recoverPersonalSignature({ data: address, signature: signatureWithPrefix });
+
   return addressesEquals(address, recoveredAddress);
 }
 
