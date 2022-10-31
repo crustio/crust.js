@@ -35,7 +35,7 @@ function auth(data: AuthData): boolean {
   }
 
   // verify with @metamask/eth-sig-util
-  recoveredAddress = recoverPersonalSignature({ data: address, signature: signatureWithPrefix})
+  recoveredAddress = recoverPersonalSignature({ data: address, signature: signatureWithPrefix});
 
   return addressesEquals(address, recoveredAddress);
 }
