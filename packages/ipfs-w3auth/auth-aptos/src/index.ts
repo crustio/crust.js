@@ -14,21 +14,51 @@ const nacl = require('tweetnacl');
  * -F file=@shell-wasm
  */
 function auth(data: AuthData): boolean {
-  const {address, signature} = data;
+  const { address, signature } = data;
 
-  const signatureWithoutPrefix = _.startsWith(_.toLower(signature), '0x')
-    ? signature.substring(2)
-    : signature;
+  const signatureWithoutHexPrefix = _.startsWith(_.toLower(signature), '0x')
+      ? signature.substring(2)
+      : signature;
 
-  const addressWithoutPrefix = _.startsWith(_.toLower(address), '0x')
-    ? address.substring(2)
-    : address;
+  const addressWithoutHexPrefix = _.startsWith(_.toLower(address), '0x')
+      ? address.substring(2)
+      : address;
 
-  return nacl.sign.detached.verify(
+  if (nacl.sign.detached.verify(
     new TextEncoder().encode(address),
-    Uint8Array.from(Buffer.from(signatureWithoutPrefix, 'hex')),
-    Uint8Array.from(Buffer.from(addressWithoutPrefix, 'hex')),
-  );
+    Uint8Array.from(Buffer.from(signatureWithoutHexPrefix, 'hex')),
+    Uint8Array.from(Buffer.from(addressWithoutHexPrefix, 'hex')))
+    ) {
+      return true;
+  };
+
+  // Adapt to the petra
+  const addressWithAptosPrefixAndNoncePendix = `APTOS\nmessage: ${address}\nnonce: crust`;
+  if (nacl.sign.detached.verify(
+    new TextEncoder().encode(addressWithAptosPrefixAndNoncePendix),
+    Uint8Array.from(Buffer.from(signatureWithoutHexPrefix, 'hex')),
+    Uint8Array.from(Buffer.from(addressWithoutHexPrefix, 'hex')))
+    ) {
+      return true;
+  };
+
+  // Adapt to the martian v0.2.x
+  const addressWithAptosPrefix = `APTOS\nmessage: ${address}`;
+  if (nacl.sign.detached.verify(
+    new TextEncoder().encode(addressWithAptosPrefix),
+    Uint8Array.from(Buffer.from(signatureWithoutHexPrefix, 'hex')),
+    Uint8Array.from(Buffer.from(addressWithoutHexPrefix, 'hex')))
+    ) {
+      return true;
+  }
+
+  // Adapt to the martian v0.1.x
+  const addressWithMessagePrefix = `{"message":"${address}"}`;
+  return nacl.sign.detached.verify(
+    new TextEncoder().encode(addressWithMessagePrefix),
+    Uint8Array.from(Buffer.from(signatureWithoutHexPrefix, 'hex')),
+    Uint8Array.from(Buffer.from(addressWithoutHexPrefix, 'hex'))
+    );
 }
 
 export default {

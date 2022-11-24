@@ -1,5 +1,5 @@
-import { Request } from 'express';
-import { AuthError } from './types';
+import {Request} from 'express';
+import {AuthError, Failure} from './types';
 import authRegistry from './authRegistry';
 const _ = require('lodash');
 const chainTypeDelimiter = '-';
@@ -8,14 +8,12 @@ const pkSigDelimiter = ':';
 async function auth(req: Request, res: any, next: any) {
   // 1. Parse basic auth header 'Authorization: Basic [AuthToken]'
   if (
-    !_.includes(req.headers.authorization, 'Basic ') &&
-    !_.includes(req.headers.authorization, 'Bearer ')
+      !_.includes(req.headers.authorization, 'Basic ') &&
+      !_.includes(req.headers.authorization, 'Bearer ')
   ) {
     res.writeHead(401, { 'Content-Type': 'application/json' });
     res.end(
-      JSON.stringify({
-        Error: 'Empty Signature',
-      })
+        JSON.stringify(Failure.unauthorized('Empty Signature'))
     );
     return;
   }
@@ -23,11 +21,11 @@ async function auth(req: Request, res: any, next: any) {
   try {
     // 2. Decode AuthToken
     const base64Credentials = _.split(
-      _.trim(req.headers.authorization),
-      ' '
+        _.trim(req.headers.authorization),
+        ' '
     )[1];
     const credentials = Buffer.from(base64Credentials, 'base64').toString(
-      'ascii'
+        'ascii'
     );
 
     // 3. Parse AuthToken as `ChainType[substrate/eth/solana]-PubKey-txMsg-tyMsg-tzMsg-tkMsg:SignedMsg`
@@ -54,7 +52,7 @@ async function auth(req: Request, res: any, next: any) {
 
     if (result === true) {
       console.log(
-        `Validate chainType: ${chainType} address: ${address} success`
+          `Validate chainType: ${chainType} address: ${address} success`
       );
       res.chainType = chainType;
       res.chainAddress = address;
@@ -66,18 +64,14 @@ async function auth(req: Request, res: any, next: any) {
       res.writeHead(401, { 'Content-Type': 'application/json' });
 
       res.end(
-        JSON.stringify({
-          Error: 'Invalid Signature',
-        })
+          JSON.stringify(Failure.unauthorized('Invalid Signature'))
       );
     }
   } catch (error: any) {
     console.error(error.message);
     res.writeHead(401, { 'Content-Type': 'application/json' });
     res.end(
-      JSON.stringify({
-        Error: error instanceof AuthError ? error.message : 'Invalid Signature',
-      })
+        JSON.stringify(Failure.unauthorized(error instanceof AuthError ? error.message : 'Invalid Signature'))
     );
     return;
   }
