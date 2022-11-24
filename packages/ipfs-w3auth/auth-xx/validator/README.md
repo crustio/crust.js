@@ -6,3 +6,5 @@
 sudo docker build -t crustio/golang-xx-auth .
 sudo docker run --net=host -d crustio/golang-xx-auth
 ```
+
+## API

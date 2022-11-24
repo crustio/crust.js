@@ -1,6 +1,6 @@
 {
   "name": "@crustio/ipfs-w3auth-handler",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "IPFS W3Auth express middleware",
   "main": "./src/index.js",
   "license": "Apache-2.0",
@@ -18,7 +18,7 @@
     "@crustio/ipfs-w3auth-substrate": "^0.0.1",
     "@crustio/ipfs-w3auth-flow": "^0.0.1",
     "@crustio/ipfs-w3auth-elrond": "^0.0.1",
-    "@crustio/ipfs-w3auth-xx": "^0.0.1",
+    "@crustio/ipfs-w3auth-xx": "^0.0.4",
     "@crustio/ipfs-w3auth-aptos": "^0.0.3",
     "express": "^4.17.1",
     "lodash": "^4.17.21",

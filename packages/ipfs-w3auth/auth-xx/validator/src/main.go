@@ -6,6 +6,15 @@ import (
 	"net/http"
 )
 
+type DataForVerify struct {
+	UserPubKey string `json:"userPubKey"`
+	UserName   string `json:"userName"`
+	VerifSig   string `json:"verifSig"`
+	FileHash   string `json:"fileHash"`
+	Timestamp  string `json:"timestamp"`
+	UploadSig  string `json:"uploadSig"`
+}
+
 func verify(w http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case "POST":
@@ -14,11 +23,12 @@ func verify(w http.ResponseWriter, req *http.Request) {
 		err := json.NewDecoder(req.Body).Decode(param)
 		pstr, _ := json.Marshal(param)
 		fmt.Println(string(pstr))
-		if err != nil || param.PubKey == "" || param.UserName == "" ||
-			param.Signature == "" || param.ReceptionPubKey == "" {
+		if err != nil || param.UserPubKey == "" || param.UserName == "" ||
+			param.VerifSig == "" || param.FileHash == "" ||
+			param.Timestamp == "" || param.UploadSig == "" {
 			w.WriteHeader(http.StatusBadRequest)
 		} else {
-			err = verifyVerificationSignature(param)
+			err = jointVerify(param)
 			if err != nil {
 				fmt.Println(err)
 				w.WriteHeader(http.StatusUnauthorized)
