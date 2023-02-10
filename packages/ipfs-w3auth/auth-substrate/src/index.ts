@@ -13,6 +13,11 @@ function auth(data: AuthData): boolean {
       return true;
     }
 
+    // verify talisman wallet's signature with eth account
+    if (signatureVerify(message, signature, address).isValid) {
+      return true;
+    }
+
     const wrappedMessage = u8aConcat(
       u8aToU8a('<Bytes>'),
       message,
@@ -21,8 +26,7 @@ function auth(data: AuthData): boolean {
 
     return signatureVerify(wrappedMessage, hexToU8a(signature), address)
       .isValid;
-  } catch (error) {
-  }
+  } catch (error) {}
   return false;
 }
 
