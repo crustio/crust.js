@@ -14,7 +14,7 @@ function auth(data: AuthData): boolean {
     }
 
     // verify talisman wallet's signature with eth account
-    if (signatureVerify(message, signature, address).isValid) {
+    if (signatureVerify(address, signature, address).isValid) {
       return true;
     }
 
