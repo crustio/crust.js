@@ -7,7 +7,7 @@ function auth(data: AuthData): boolean {
   const {address, txMsg, signature} = data;
 
   try {
-    const message = txMsg? txMsg: stringToU8a(address);
+    const message = txMsg ? txMsg : stringToU8a(address);
 
     if (signatureVerify(message, hexToU8a(signature), address).isValid) {
       return true;
