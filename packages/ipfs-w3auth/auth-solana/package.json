@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-solana",
+  "name": "@crustnetwork/ipfs-w3auth-solana",
   "version": "0.0.1",
   "description": "Solana authentication of IPFS W3Auth",
   "main": "./src/index.js",
@@ -9,13 +9,15 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
   },
   "dependencies": {
     "bs58": "^4.0.1",
     "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
+    "copyfiles": "latest",
     "@types/node": "^14.14.31",
     "gts": "^3.1.0",
     "typescript": "^4.1.3"

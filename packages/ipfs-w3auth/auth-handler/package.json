@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-handler",
+  "name": "@crustnetwork/ipfs-w3auth-handler",
   "version": "0.0.19",
   "description": "IPFS W3Auth express middleware",
   "main": "./src/index.js",
@@ -9,7 +9,8 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
   },
   "resolutions": {
     "usb": "1.8.x",
@@ -17,16 +18,16 @@
     "bufferutil": "4.0.4"
   },
   "dependencies": {
-    "@crustio/ipfs-w3auth-avalanche": "^0.0.1",
-    "@crustio/ipfs-w3auth-ethereum": "^0.0.2",
-    "@crustio/ipfs-w3auth-solana": "^0.0.1",
-    "@crustio/ipfs-w3auth-substrate": "^0.0.4",
-    "@crustio/ipfs-w3auth-flow": "^0.0.1",
-    "@crustio/ipfs-w3auth-elrond": "^0.0.1",
-    "@crustio/ipfs-w3auth-xx": "^0.0.4",
-    "@crustio/ipfs-w3auth-aptos": "^0.0.3",
-    "@crustio/ipfs-w3auth-algorand": "^0.0.3",
-    "@crustio/ipfs-w3auth-ton": "^0.0.1",
+    "@crustnetwork/ipfs-w3auth-avalanche": "0.x",
+    "@crustnetwork/ipfs-w3auth-ethereum": "0.x",
+    "@crustnetwork/ipfs-w3auth-solana": "0.x",
+    "@crustnetwork/ipfs-w3auth-substrate": "0.x",
+    "@crustnetwork/ipfs-w3auth-flow": "0.x",
+    "@crustnetwork/ipfs-w3auth-elrond": "0.x",
+    "@crustnetwork/ipfs-w3auth-xx": "0.x",
+    "@crustnetwork/ipfs-w3auth-aptos": "0.x",
+    "@crustnetwork/ipfs-w3auth-algorand": "0.x",
+    "@crustnetwork/ipfs-w3auth-ton": "0.x",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "winston": "^3.3.3"

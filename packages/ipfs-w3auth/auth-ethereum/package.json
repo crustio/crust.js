@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-ethereum",
+  "name": "@crustnetwork/ipfs-w3auth-ethereum",
   "version": "0.0.2",
   "description": "Ethereum authentication of IPFS W3Auth",
   "main": "./src/index.js",
@@ -9,7 +9,8 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
   },
   "dependencies": {
     "@metamask/eth-sig-util": "^5.0.0",
@@ -17,6 +18,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "copyfiles": "latest",
     "@babel/runtime": "^7.13.2",
     "@types/lodash": "^4.14.172",
     "@types/node": "^14.14.31",

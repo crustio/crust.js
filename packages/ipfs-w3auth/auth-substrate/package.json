@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-substrate",
+  "name": "@crustnetwork/ipfs-w3auth-substrate",
   "version": "0.0.4",
   "description": "Substrate authentication of IPFS W3Auth",
   "main": "./src/index.js",
@@ -10,7 +10,7 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "pub": "tsc && copyfiles ./pacakge.json ./build && cd build && npm publish --access public"
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
   },
   "resolutions": {
     "usb": "1.8.x",

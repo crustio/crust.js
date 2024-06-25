@@ -1,5 +1,5 @@
 ![license](https://img.shields.io/badge/License-Apache%202.0-blue?logo=apache&style=flat-square)
-[![npm](https://img.shields.io/npm/v/@crustio/type-definitions?logo=npm&style=flat-square)](https://www.npmjs.com/package/@crustio/type-definitions)
+[![npm](https://img.shields.io/npm/v/@crustnetwork/type-definitions?logo=npm&style=flat-square)](https://www.npmjs.com/package/@crustnetwork/type-definitions)
 
 # crust.js
 
@@ -12,14 +12,14 @@ More documentation and examples on [Crust Wiki](https://wiki.crust.network/)
 1. Install dependencies
 
 ```shell
-yarn add @polkadot/api @crustio/type-definitions
+yarn add @polkadot/api @crustnetwork/type-definitions
 ```
 
 2. Create API instance
 
 ```ts
 import {ApiPromise, WsProvider} from '@polkadot/api';
-import {typesBundleForPolkadot} from '@crustio/type-definitions';
+import {typesBundleForPolkadot} from '@crustnetwork/type-definitions';
 
 async function main() {
     const api = new ApiPromise({
@@ -47,7 +47,7 @@ console.log(fileInfo.toHuman());
 - Use crust types
 
 ```ts
-import {crustTypes} from '@crustio/type-definitions';
+import {crustTypes} from '@crustnetwork/type-definitions';
 
 // Define FileInfo
 export type FileInfo = typeof crustTypes.market.types.FileInfo;

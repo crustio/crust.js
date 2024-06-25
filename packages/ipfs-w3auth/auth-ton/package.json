@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-ton",
+  "name": "@crustnetwork/ipfs-w3auth-ton",
   "version": "0.0.1",
   "description": "Ton connnect authentication of IPFS W3Auth",
   "main": "./src/index.js",
@@ -10,7 +10,7 @@
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "pub": "tsc && copyfiles ./pacakge.json ./build && cd build && npm publish --access public"
+    "pub": "tsc && copyfiles -s false ./pacakge.json ./build && cd build && npm publish --access public"
   },
 
   "dependencies": {

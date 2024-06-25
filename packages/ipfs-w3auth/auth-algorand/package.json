@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/ipfs-w3auth-algorand",
+  "name": "@crustnetwork/ipfs-w3auth-algorand",
   "version": "0.0.3",
   "description": "Algorand authentication of IPFS W3Auth",
   "main": "./src/index.js",
@@ -9,12 +9,14 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
   },
   "dependencies": {
     "algosdk": "^2.7.0"
   },
   "devDependencies": {
+    "copyfiles": "latest",
     "@babel/runtime": "^7.13.2",
     "@types/node": "^14.17.21",
     "gts": "^3.1.0",

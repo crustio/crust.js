@@ -1,5 +1,5 @@
 {
-  "name": "@crustio/crust-pin",
+  "name": "@crustnetwork/crust-pin",
   "version": "1.0.0",
   "description": "Decentralized pin on Crust Network",
   "main": "src/index.js",
@@ -15,13 +15,20 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix"
+    "fix": "gts fix",
+    "pub": "tsc && copyfiles ./package.json ./build && cd build && npm publish --access public"
+  },
+  "resolutions": {
+    "usb": "1.8.x",
+    "utf-8-validate": "5.0.6",
+    "bufferutil": "4.0.4"
   },
   "dependencies": {
-    "@crustio/type-definitions": "^1.2.0",
+    "@crustnetwork/type-definitions": "1.x",
     "@polkadot/api": "^4.2.1"
   },
   "devDependencies": {
+    "copyfiles": "latest",
     "@babel/runtime": "^7.13.2",
     "@types/node": "^14.14.31",
     "gts": "^3.1.0",

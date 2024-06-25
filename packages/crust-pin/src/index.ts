@@ -1,4 +1,4 @@
-import {typesBundleForPolkadot} from '@crustio/type-definitions';
+import {typesBundleForPolkadot} from '@crustnetwork/type-definitions';
 import {ApiPromise, WsProvider} from '@polkadot/api';
 import {sendTx} from './util';
 
@@ -33,7 +33,7 @@ export default class CrustPinner {
       this.crustApi.disconnect();
 
       return res;
-    } catch (e) {
+    } catch (e: any) {
       console.error(
         `Error happens on calling Crust Chain, details: ${e.message}`
       );

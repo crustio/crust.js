@@ -1,14 +1,14 @@
 import {AuthData, AuthError} from './types';
-import SubstrateAuth from '@crustio/ipfs-w3auth-substrate';
-import EthAuth from '@crustio/ipfs-w3auth-ethereum';
-import SolanaAuth from '@crustio/ipfs-w3auth-solana';
-import AvalancheAuth from '@crustio/ipfs-w3auth-avalanche';
-import FlowAuth from '@crustio/ipfs-w3auth-flow';
-import ElrondAuth from '@crustio/ipfs-w3auth-elrond';
-import XXAuth from '@crustio/ipfs-w3auth-xx';
-import AptosAuth from '@crustio/ipfs-w3auth-aptos';
-import AlgorandAuth from '@crustio/ipfs-w3auth-algorand';
-import TonAuth from '@crustio/ipfs-w3auth-ton';
+import SubstrateAuth from '@crustnetwork/ipfs-w3auth-substrate';
+import EthAuth from '@crustnetwork/ipfs-w3auth-ethereum';
+import SolanaAuth from '@crustnetwork/ipfs-w3auth-solana';
+import AvalancheAuth from '@crustnetwork/ipfs-w3auth-avalanche';
+import FlowAuth from '@crustnetwork/ipfs-w3auth-flow';
+import ElrondAuth from '@crustnetwork/ipfs-w3auth-elrond';
+import XXAuth from '@crustnetwork/ipfs-w3auth-xx';
+import AptosAuth from '@crustnetwork/ipfs-w3auth-aptos';
+import AlgorandAuth from '@crustnetwork/ipfs-w3auth-algorand';
+import TonAuth from '@crustnetwork/ipfs-w3auth-ton';
 
 const _ = require('lodash');
 

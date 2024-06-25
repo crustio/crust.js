@@ -51,80 +51,80 @@
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.6.0.tgz#ec6cd237440700bc23ca23087f513c75508958b0"
   integrity sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==
 
-"@crustio/ipfs-w3auth-algorand@^0.0.3":
+"@crustnetwork/ipfs-w3auth-algorand@0.x":
   version "0.0.3"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-algorand/-/ipfs-w3auth-algorand-0.0.3.tgz#4cc69f3f5856b7476ece44fb7404a30f753ff72f"
-  integrity sha512-4anisOnuxyKUvnZ5K6OgvmfFYL9X/bZBoIxgaIL+MywM0w+M1JFP7uLXblBxTN3FQED4xMO97ygEhO3PlFghxw==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-algorand/-/ipfs-w3auth-algorand-0.0.3.tgz#d25c8936928fdc2bc1beefb9b13be08bc0758a0b"
+  integrity sha512-VMkShxRE3NCZwq83uXsHzieJkGe8Leg8cUSjyo73nn5uPEy3QOnSY6lE/i/4HU3I0gOgUzZl0xrshrs3dbCvBw==
   dependencies:
     algosdk "^2.7.0"
 
-"@crustio/ipfs-w3auth-aptos@^0.0.3":
+"@crustnetwork/ipfs-w3auth-aptos@0.x":
   version "0.0.3"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-aptos/-/ipfs-w3auth-aptos-0.0.3.tgz#0082893549065e0567a1b8e7ff81f04131e258f2"
-  integrity sha512-D26FSWGdYKhFKIluZyRJSPSH7Nxj4kgEV6eYqZ8d4WGhz54Xkt81EJgwFaGsfi+x/8Ma1+E5UgcDYx1X7v0N2w==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-aptos/-/ipfs-w3auth-aptos-0.0.3.tgz#12bf708296d820ce0f08a9f83b00416aea9e1d1b"
+  integrity sha512-faBJyvI57DJW2HfkJVDkiHB63z+TA4pZeE7lFesJNPwFD2vFfj6bjCbPsNSw1YqUIrlAF9RUB6sbLwHf5o3AsA==
   dependencies:
     lodash "^4.17.21"
     tweetnacl "^1.0.3"
 
-"@crustio/ipfs-w3auth-avalanche@^0.0.1":
+"@crustnetwork/ipfs-w3auth-avalanche@0.x":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-avalanche/-/ipfs-w3auth-avalanche-0.0.1.tgz#56de73a1d99e14a286edb4d059ea574d28b6fdb8"
-  integrity sha512-a8gw0teyXZ5waMriKJr1DLZFoYH2LUD/I0OiW5vl/jcrYmdrljesTMRXvQo8IJjq7VFznhhP3bOtU1ZPu+t5mw==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-avalanche/-/ipfs-w3auth-avalanche-0.0.1.tgz#dc5041d42c8b8dcd76960894c1da5fc6c180440e"
+  integrity sha512-CElUbm6lZ6fILRHUp3b5tnDStMwv2ekK7oIaEaQnFXS2Wl+apAXcnvKeMaHkx8DBhzYKs2da3/UASLFHNsf8qg==
   dependencies:
     avalanche "3.8.1"
     create-hash "1.2.0"
     lodash "^4.17.21"
 
-"@crustio/ipfs-w3auth-elrond@^0.0.1":
+"@crustnetwork/ipfs-w3auth-elrond@0.x":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-elrond/-/ipfs-w3auth-elrond-0.0.1.tgz#6a35f86ffee881f2403b2448a7c5a7f81ca47e4a"
-  integrity sha512-Ahx5hwgqj3GKjeSS4+27mILL0vmFAG8aCqSMMDcfvhe9/Mspt7VkoA8j4/4N3KbiuGjcDL0Jozqg1r9b2oeJeA==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-elrond/-/ipfs-w3auth-elrond-0.0.1.tgz#2433d77e0373ee02bfa7da6e9373185c15ca8911"
+  integrity sha512-qJJycIZkFYKo7nCJvITxzm9TOGmSwW4Sp2U8c6EyKNj2cPAO9YcBjMzM6aRS3HYa6EBRNWUvFzcl879HrXW7Rw==
   dependencies:
     "@elrondnetwork/erdjs" "^8.0.1-alpha.5"
 
-"@crustio/ipfs-w3auth-ethereum@^0.0.2":
+"@crustnetwork/ipfs-w3auth-ethereum@0.x":
   version "0.0.2"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-ethereum/-/ipfs-w3auth-ethereum-0.0.2.tgz#f0ea6d9daa229c21fa38d34cc5a93924ad12b8ef"
-  integrity sha512-qdpqqzyUAiplEGuvcNVtpUapMrCZZdgAneGdmpHuDuMrXvC0RD4fVaS/ciqUytH5wPUZj47zg4hM3cDE89dsMg==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-ethereum/-/ipfs-w3auth-ethereum-0.0.2.tgz#29912349a6f934fa5901da5485866b9f2455b2e5"
+  integrity sha512-vCfZ1KAzC46fMX4lSJLYHL7z9vXIMJNjhMrcbpqDJttYoRP4ivchAAStbBSA+xPvtva560pk2wzgqHwj449R2Q==
   dependencies:
     "@metamask/eth-sig-util" "^5.0.0"
     ethers "^5.4.6"
     lodash "^4.17.21"
 
-"@crustio/ipfs-w3auth-flow@^0.0.1":
+"@crustnetwork/ipfs-w3auth-flow@0.x":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-flow/-/ipfs-w3auth-flow-0.0.1.tgz#59dd1fd54ad72ffc2ed37e407478609879fe465b"
-  integrity sha512-m7V4UUgmc2NtVc+VmL2GYUDAQSJXfNfyjrsyxKGpNElbmPmugeUPLPuStcNLnGIlvEGxkXrodcBUeU5Jg7SwGQ==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-flow/-/ipfs-w3auth-flow-0.0.1.tgz#c38d898757e2c9520b6a0c4625d57b4481e2efb7"
+  integrity sha512-UWAZc9l1hSfFygR2xHUe/IV86gn2K/SHvvJ46ztOE3vMmbdHJVgXYRVC6R1t+vFozp1mMcXh5KyRxR298FusIg==
   dependencies:
     "@onflow/fcl" "0.0.77"
     "@onflow/types" "0.0.5"
 
-"@crustio/ipfs-w3auth-solana@^0.0.1":
+"@crustnetwork/ipfs-w3auth-solana@0.x":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-solana/-/ipfs-w3auth-solana-0.0.1.tgz#cd61782b7872f3e7cabe60636bf5ff8aeb539029"
-  integrity sha512-6qX5z9TVRIYv+THmW01BrZ9wlR7DWqGpVkgdk/b7b7Y50uQWCfAkqgDZ36+nxrNY1I4PVq+2SN6aT5qwd/VSSw==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-solana/-/ipfs-w3auth-solana-0.0.1.tgz#22cbe3fe89187974aae3357bc7dee9450b352f60"
+  integrity sha512-CnLa/a3f16CkZmJr9pcyeno9jYSPO24Xgcj0N7392VzFND1S3PHqOcRZQ1g/w8t3cmE9JXFxBvYCzifbjGEWtg==
   dependencies:
     bs58 "^4.0.1"
     tweetnacl "^1.0.3"
 
-"@crustio/ipfs-w3auth-substrate@^0.0.4":
+"@crustnetwork/ipfs-w3auth-substrate@0.x":
   version "0.0.4"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-substrate/-/ipfs-w3auth-substrate-0.0.4.tgz#d1e75ed6eee96228bb6ea13aaff45bd7e89bcf75"
-  integrity sha512-ZXAs+bUFBhogSryPqpr8PmfZPwu6sQK+vXm71IM2FLAepHt2lrfpugvt6U7qZIAQut2dSFDK7Jf/j6CXN7VtpA==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-substrate/-/ipfs-w3auth-substrate-0.0.4.tgz#b6102f949713a901a98ec382cbc1591fa7cebe9c"
+  integrity sha512-u8Hxa5SuL5ulJFM78sL/Iq2kxLLsFs8bxsG2VDHtghXQXfz2NZrW7NSCO6Uw8EoGPLEiww2ZBM9Fwy8bGh8HYA==
   dependencies:
     "@polkadot/api" "5.x"
 
-"@crustio/ipfs-w3auth-ton@^0.0.1":
+"@crustnetwork/ipfs-w3auth-ton@0.x":
   version "0.0.1"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-ton/-/ipfs-w3auth-ton-0.0.1.tgz#366890ff28c176ea06525539b111a40d210b92fc"
-  integrity sha512-mAOk5L+6I4/mXETn8to/5FSMLwvQCWwZJChSI7cMThp4PHAfpxqyj4/MxFD9WdevIYj90VKFtBTVmeagp4Wdwg==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-ton/-/ipfs-w3auth-ton-0.0.1.tgz#ed6625c096ca0f4688a69f80a5e4510d3cd397c5"
+  integrity sha512-CqmsLjNZzqPL9y3VP8s8J2S6KXrVTFnYrwDiz+tsCSnVuZq8acA+kFGJ4eovB56WVBPxTSTKipD01vkkyzBHAA==
   dependencies:
     tweetnacl "1.x"
 
-"@crustio/ipfs-w3auth-xx@^0.0.4":
+"@crustnetwork/ipfs-w3auth-xx@0.x":
   version "0.0.4"
-  resolved "https://registry.npmjs.org/@crustio/ipfs-w3auth-xx/-/ipfs-w3auth-xx-0.0.4.tgz#8e15fcb7f9ff3bf9f476298575de0e73d0bd39a4"
-  integrity sha512-beyOqUqhc13sw4FwFJshlg+3ezs7bTG9275N2xVUKqZ0HjF/J9FqmDQGFjyrBZVNvQVxwMlpImCjEt9mPoL/JQ==
+  resolved "https://registry.npmjs.org/@crustnetwork/ipfs-w3auth-xx/-/ipfs-w3auth-xx-0.0.4.tgz#1bba4396adcea2706196315cc5644b9c766fc3d1"
+  integrity sha512-o4ew1YkhdM31bJfGKh+IZ+4u4uHEXq5C+gbZ3065TVV2zLdPCcVhPD4DgyIZvueuPT8LVeLWvnrXMgdGi4uYcQ==
   dependencies:
     axios "^0.27.2"
 

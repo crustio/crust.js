@@ -7,7 +7,7 @@ This node package allows you to place a storage order on Crust Network, and the 
 - Install dependency
 
 ```shell
-yarn add @crustio/crust-pin
+yarn add @crustnetwork/crust-pin
 ```
 
 - Create `CrustPinner`
@@ -15,7 +15,7 @@ yarn add @crustio/crust-pin
 Typescript sample
 
 ```typescript
-import CrustPinner from '@crustio/crust-pin';
+import CrustPinner from '@crustnetwork/crust-pin';
 
 const crust = new CrustPinner(`${CRUST_ACCOUNT_SEEDS}`);
 
@@ -29,7 +29,7 @@ main();
 or Commonjs sample
 
 ```javascript
-const crustPin = require('@crustio/crust-pin').default;
+const crustPin = require('@crustnetwork/crust-pin').default;
 
 const crust = new crustPin(`${CRUST_ACCOUNT_SEEDS}`);
 
