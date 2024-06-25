@@ -1,7 +1,7 @@
 {
-  "name": "@crustio/ipfs-w3auth-substrate",
-  "version": "0.0.4",
-  "description": "Substrate authentication of IPFS W3Auth",
+  "name": "@crustio/ipfs-w3auth-ton",
+  "version": "0.0.1",
+  "description": "Ton connnect authentication of IPFS W3Auth",
   "main": "./src/index.js",
   "license": "Apache-2.0",
   "scripts": {
@@ -12,13 +12,9 @@
     "fix": "gts fix",
     "pub": "tsc && copyfiles ./pacakge.json ./build && cd build && npm publish --access public"
   },
-  "resolutions": {
-    "usb": "1.8.x",
-    "utf-8-validate": "5.0.6",
-    "bufferutil": "4.0.4"
-  },
+
   "dependencies": {
-    "@polkadot/api": "5.x"
+    "tweetnacl": "1.x"
   },
   "devDependencies": {
     "copyfiles": "latest",
