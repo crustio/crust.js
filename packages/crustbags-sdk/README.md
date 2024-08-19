@@ -4,15 +4,15 @@ SDK for interacting with TonBags contract
 ### Installation
 
 ```bash
-npm install @crustnetwork/tonbags-sdk @ton/ton @ton/core @ton/crypto
+npm install @crustnetwork/crustbags-sdk @ton/ton @ton/core @ton/crypto
 ```
 
 ### Usage 
 
 #### Place Storage Order
 ```javascript
-import tonbagssdk from '@crustnetwork/tonbags-sdk'
-import { default_storage_period } from "@crustnetwork/tonbags-sdk/src/TonBags";
+import tonbagssdk from '@crustnetwork/crustbags-sdk'
+import { default_storage_period } from "@crustnetwork/crustbags-sdk/src/TonBags";
 import { Address, toNano } from "@ton/core";
 import { mnemonicToPrivateKey } from "@ton/crypto";
 import { TonClient, WalletContractV4 } from "@ton/ton";
@@ -45,7 +45,7 @@ await openTonBags.sendPlaceStorageOrder(
 
 #### merkle tree 
 ```javascript
-import { merkle } from '@crustnetwork/tonbags-sdk'
+import { merkle } from '@crustnetwork/crustbags-sdk'
 
 const readAsBlob = async (file: string) => {
   return new Promise<Blob>((resolve, reject) => {
@@ -74,7 +74,7 @@ Wraped for the [Tonutils-storage](https://github.com/crustio/tonutils-storage) a
 Require env TON_STORAGE_UTILS_API=http://localhost:7721
 
 ```javascript
-import { tonutils } from '@crustnetwork/tonbags-sdk'
+import { tonutils } from '@crustnetwork/crustbags-sdk'
 
 // create bag
 const bagId = await tonutils.createBag('path', 'description')
