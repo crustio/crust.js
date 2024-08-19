@@ -32,16 +32,16 @@ export const op_remove_storage_provider_from_white_list = 0xbd51af76;
 
 export const config_min_storage_fee = 0x7bb75940;
 
-export type TonBagsContent = {
+export type CrustBagsContent = {
     type: 0 | 1;
     uri: string;
 };
 
-export function tonBagsContentToCell(content: TonBagsContent) {
+export function crustBagsContentToCell(content: CrustBagsContent) {
     return beginCell().storeUint(content.type, 8).storeStringTail(content.uri).endCell();
 }
 
-export type TonBagsConfig = {
+export type CrustBagsConfig = {
     adminAddress: Address;
     treasuryAddress: Address;
     storageContractCode: Cell;
@@ -49,7 +49,7 @@ export type TonBagsConfig = {
     storageProviderWhitelistDict: Dictionary<Address, Cell>;
 };
 
-export function tonBagsConfigToCell(config: TonBagsConfig): Cell {
+export function crustBagsConfigToCell(config: CrustBagsConfig): Cell {
     return beginCell()
         .storeAddress(config.adminAddress)
         .storeAddress(config.treasuryAddress)
@@ -59,17 +59,17 @@ export function tonBagsConfigToCell(config: TonBagsConfig): Cell {
         .endCell();
 }
 
-export class TonBags implements Contract {
+export class CrustBags implements Contract {
     constructor(readonly address: Address, readonly init?: { code: Cell; data: Cell }) {}
 
     static createFromAddress(address: Address) {
-        return new TonBags(address);
+        return new CrustBags(address);
     }
 
-    static createFromConfig(config: TonBagsConfig, code: Cell, workchain = 0) {
-        const data = tonBagsConfigToCell(config);
+    static createFromConfig(config: CrustBagsConfig, code: Cell, workchain = 0) {
+        const data = crustBagsConfigToCell(config);
         const init = { code, data };
-        return new TonBags(contractAddress(workchain, init), init);
+        return new CrustBags(contractAddress(workchain, init), init);
     }
 
     async getBalance(provider: ContractProvider) {
@@ -235,7 +235,7 @@ export class TonBags implements Contract {
     ) {
         await provider.internal(via, {
             sendMode: SendMode.PAY_GAS_SEPARATELY,
-            body: TonBags.placeStorageOrderMessage(
+            body: CrustBags.placeStorageOrderMessage(
                 torrentHash,
                 fileSize,
                 merkleHash,

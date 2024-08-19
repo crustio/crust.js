@@ -104,7 +104,7 @@ export async function downloadChildTonBag(bag_id: string) {
     }
 }
 
-export async function downloadTonBagSuccess(bag_id: string): Promise<boolean> {
+export async function downloadCrustBagsuccess(bag_id: string): Promise<boolean> {
     const bd = await getTonBagDetails(bag_id);
     return bd.downloaded === bd.size;
 }

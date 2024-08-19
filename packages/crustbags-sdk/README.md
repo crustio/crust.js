@@ -1,5 +1,5 @@
-## TonBags SDK
-SDK for interacting with TonBags contract
+## CrustBags SDK
+SDK for interacting with CrustBags contract
 
 ### Installation
 
@@ -11,8 +11,8 @@ npm install @crustnetwork/crustbags-sdk @ton/ton @ton/core @ton/crypto
 
 #### Place Storage Order
 ```javascript
-import tonbagssdk from '@crustnetwork/crustbags-sdk'
-import { default_storage_period } from "@crustnetwork/crustbags-sdk/src/TonBags";
+import CrustBagssdk from '@crustnetwork/crustbags-sdk'
+import { default_storage_period } from "@crustnetwork/crustbags-sdk/src/CrustBags";
 import { Address, toNano } from "@ton/core";
 import { mnemonicToPrivateKey } from "@ton/crypto";
 import { TonClient, WalletContractV4 } from "@ton/ton";
@@ -20,17 +20,17 @@ import { TonClient, WalletContractV4 } from "@ton/ton";
 const tc = new TonClient({
     endpoint: "https://testnet.toncenter.com/api/v2/jsonRPC",
 });
-const tonbagsAddress = Address.parse(
+const CrustBagsAddress = Address.parse(
     "EQBOOMNqG0rvNm6vFGfR4qZl48BTDw_gYefVI4DQ70t9GoPC"
 );
-const tonBags = tonbagssdk.TonBags.createFromAddress(tonbagsAddress);
+const CrustBags = CrustBagssdk.CrustBags.createFromAddress(CrustBagsAddress);
 
-const openTonBags = tc.open(tonBags);
+const openCrustBags = tc.open(CrustBags);
 const keyPair = await mnemonicToPrivateKey(["your", "mnemonic"]);
 const wallet = tc.open(
     WalletContractV4.create({ workchain: 0, publicKey: keyPair.publicKey })
 );
-await openTonBags.sendPlaceStorageOrder(
+await openCrustBags.sendPlaceStorageOrder(
     wallet.sender(keyPair.secretKey),
     tonrrentHash, // torrentHash or bagId
     1024n, // fileSize
